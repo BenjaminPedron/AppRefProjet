@@ -19,10 +19,10 @@ public class BRiLaunch {
 		// URLClassLoader sur ftp
 		
         
-		System.out.println("Bienvenue dans votre gestionnaire dynamique d'activité BRi");
-		System.out.println("Pour ajouter une activité, celle-ci doit être présente sur votre serveur ftp");
-		System.out.println("A tout instant, en tapant le nom de la classe, vous pouvez l'intégrer");
-		System.out.println("Les clients se connectent au serveur 3000 pour lancer une activité");
+		System.out.println("Bienvenue dans votre gestionnaire dynamique d'activitÃ© BRi");
+		System.out.println("Pour ajouter une activitÃ©, celle-ci doit Ãªtre prÃ©sente sur votre serveur ftp");
+		System.out.println("A tout instant, en tapant le nom de la classe, vous pouvez l'intÃ©grer");
+		System.out.println("Les clients se connectent au serveur 3000 pour lancer une activitÃ©");
 		
 		new Thread(new ServeurBRi(PORT_SERVICE)).start();
 		
@@ -31,7 +31,7 @@ public class BRiLaunch {
 					String classeName = clavier.next();
 					URL[] classLoaderUrls = new URL[]{new URL("ftp://localhost:2121/")};
 			        
-			        // Create a new URLClassLoader 
+			        /* Create a new URLClassLoader  */
 			        URLClassLoader urlClassLoader = new URLClassLoader(classLoaderUrls);
 			        Class<? extends Service> servCl = (Class<? extends Service>) urlClassLoader.loadClass("examples."+classeName);
 			        ServiceRegistry.addService(servCl);
